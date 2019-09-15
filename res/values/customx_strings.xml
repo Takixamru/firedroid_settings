@@ -326,4 +326,6 @@
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
     <string name="adaptive_playback_timeout_10_min_summary">On (10 minutes)</string>
 
+    <!-- Battery temperature -->
+    <string name="battery_temp">Battery temperature</string>
 </resources>
