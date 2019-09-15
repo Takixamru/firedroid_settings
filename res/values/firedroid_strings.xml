@@ -21,4 +21,7 @@
     <!-- Fragment for hosting a selectable list of applications -->
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
+
+    <!-- Battery temperature -->
+    <string name="battery_temp">Temperature</string>
 </resources>
