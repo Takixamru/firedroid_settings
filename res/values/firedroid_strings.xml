@@ -158,4 +158,10 @@
     <string name="always_on_display_schedule_sunrise">Sunrise</string>
     <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
     <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
+
+    <!-- SELinux Status -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
 </resources>
