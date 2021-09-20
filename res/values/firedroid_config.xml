@@ -2,4 +2,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Device specific doze package -->
     <string name="config_customDozePackage" translatable="false"></string>
+
+    <!-- Battery health -->
+    <string name="config_batteryHealthNode"></string>
+    <string name="config_batteryRemainingCapacityNode"></string>
+    <string name="config_batteryDesignCapacityNode"></string>
 </resources>
