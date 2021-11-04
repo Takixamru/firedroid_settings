@@ -233,4 +233,8 @@
 
     <!-- Battery health -->
     <string name="battery_health_title">Battery health</string>
+
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">Small mobile type icon</string>
+    <string name="use_old_mobiletype_summary">Show mobile type icon on top of the signal indicator</string>
 </resources>
