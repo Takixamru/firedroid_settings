@@ -9,4 +9,8 @@
 
     <!-- FireDroid Maintainer -->
     <string name="FireDroid_maintainer">Device Maintainer</string>
+
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Colored icons</string>
+    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in status bar</string>
 </resources>
