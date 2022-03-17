@@ -166,4 +166,8 @@
 
     <!-- Density category -->
     <string name="density_category">Density options</string>
+
+	<!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 </resources>
