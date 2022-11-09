@@ -135,4 +135,8 @@
     <!-- Annoying Notifications -->
     <string name="notification_sound_vib_screen_on_title">Annoying Notifications</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
+    <!-- Power menu on lockscreen -->
+    <string name="power_menu_hide_on_secure_title">Hide power menu on lock screen</string>
+    <string name="power_menu_hide_on_secure_summary">Hide the power menu while on a secure lock screen</string>
 </resources>
