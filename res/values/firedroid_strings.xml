@@ -14,4 +14,12 @@
     <string name="firedroid_lab_title">BonFire</string>
     <string name="firedroid_lab_footer">These features are in Beta stages. Warning: May Burn your device. :XD</string>
     <string name="firedroid_lab_summary">Ready to Ignite ?</string>
+
+    <!-- Unlimited google photos storage -->
+    <string name="use_photos_spoof_title">Unlimited Photos Storage</string>
+    <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
+
+    <!-- Unlock FPS for specific games -->
+    <string name="use_games_spoof_title">Unlock Higher FPS in games</string>
+    <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
 </resources>
