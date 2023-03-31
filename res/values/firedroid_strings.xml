@@ -70,4 +70,8 @@
     <string name="color_source_preset">Preset</string>
     <string name="accent_color_title">Accent Color</string>
     <string name="accent_color_summary">Override default accent color</string>
+
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
 </resources>
