@@ -159,7 +159,7 @@ public class DeviceAdminAdd extends CollapsingToolbarBaseActivity {
 
         mDPM = getSystemService(DevicePolicyManager.class);
         mAppOps = getSystemService(AppOpsManager.class);
-        mLayoutInflaternflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mLayoutInflaternflater = getSystemService(LayoutInflater.class);
         PackageManager packageManager = getPackageManager();
 
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK) != 0) {
