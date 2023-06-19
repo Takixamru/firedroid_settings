@@ -168,4 +168,8 @@
 
     <!-- Battery health -->
     <string name="battery_health_title">Battery health</string>
+
+    <!-- Separate ring & notification toggle -->
+    <string name="volume_separate_notification_title">Separated Ring and Notification</string>
+    <string name="volume_separate_notification_summary">Allow controlling each stream individually</string>
 </resources>
