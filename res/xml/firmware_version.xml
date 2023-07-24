@@ -30,6 +30,12 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FireDroidVersionDetailPreferenceController"/>
 
+    <!-- FireDroid logo -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="firedroid_logo"
+        android:layout="@layout/firedroid_logo"
+        android:selectable="false"/>
+
    <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
