@@ -44,6 +44,7 @@
      private static final int ACTIVITY_TRIGGER_COUNT = 3;
  
      private static final String KEY_FIREDROID_BUILD_VERSION_PROP = "org.firedroid.build_version";
+     private static final String KEY_FIREDROID_CODENAME_VERSION_PROP = "org.firedroid.codename";
      private static final String KEY_FIREDROID_DEVICE_PROP = "org.firedroid.device";
      private static final String KEY_FIREDROID_RELEASE_TYPE_PROP = "org.firedroid.build_type";
      private static final String KEY_FIREDROID_RELEASE_VERSION_PROP = "org.firedroid.version.display";
@@ -127,11 +128,13 @@
      private String shortRomVersion() {
          String romVersion = SystemProperties.get(KEY_FIREDROID_BUILD_VERSION_PROP,
                  this.mContext.getString(R.string.device_info_default));
+         String releaseVersion = SystemProperties.get(KEY_FIREDROID_CODENAME_VERSION_PROP,
+                 this.mContext.getString(R.string.device_info_default));
          String deviceCodename = SystemProperties.get(KEY_FIREDROID_DEVICE_PROP,
                  this.mContext.getString(R.string.device_info_default));
          String romReleasetype = SystemProperties.get(KEY_FIREDROID_RELEASE_TYPE_PROP,
                  this.mContext.getString(R.string.device_info_default));
-         String shortVersion = romVersion + " | " + deviceCodename + " | " + romReleasetype;
+         String shortVersion = releaseVersion + " | " + romVersion + " | " + deviceCodename + " | " + romReleasetype;
          return shortVersion;
      }
  
