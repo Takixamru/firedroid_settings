@@ -117,4 +117,8 @@
 
     <!-- Text shown for the title of the restart systemui option -->
     <string name="power_menu_restart_systemui_title">Restart FireUI</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use Black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
 </resources>
