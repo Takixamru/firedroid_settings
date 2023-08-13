@@ -82,4 +82,8 @@
     <!-- Game Space -->
     <string name="game_space_title">Game Space</string>
     <string name="game_space_summary">Enhance your gaming experience</string>
+
+    <!-- FireDroidUI -->
+    <string name="custom_ui_toggle_title">Use alternate settings UI</string>
+    <string name="custom_ui_toggle_summary">A reimagined dashboard UI for FireDroid</string>
 </resources>
