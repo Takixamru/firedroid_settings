@@ -139,11 +139,4 @@
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Hide power menu on lock screen</string>
     <string name="power_menu_hide_on_secure_summary">Hide the power menu while on a secure lock screen</string>
-
-    <!-- Show LTE/4G switch -->
-    <string name="show_fourg_icon_title">Show 4G instead of LTE</string>
-    <string name="show_fourg_icon_summary">Replace LTE indicator with 4G</string>
-
-    <!-- FireDroid categories -->
-    <string name="icons_category">Icons</string>
 </resources>
