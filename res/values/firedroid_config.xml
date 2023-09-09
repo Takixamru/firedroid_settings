@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 FireDroid
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Battery health -->
+    <string name="config_batteryHealthNode"></string>
+    <string name="config_batteryRemainingCapacityNode"></string>
+    <string name="config_batteryDesignCapacityNode"></string>
+</resources>
