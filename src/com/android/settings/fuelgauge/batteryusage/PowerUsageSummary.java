@@ -27,6 +27,7 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.Settings.Global;
+import android.text.TextUtils;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
@@ -49,6 +50,9 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -67,6 +71,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
     private static final String KEY_BATTERY_TEMP = "battery_temp";
+    private static final String KEY_BATTERY_HEALTH = "battery_health";
 
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
@@ -78,6 +83,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
     BatteryInfo mBatteryInfo;
     @VisibleForTesting
     PowerGaugePreference mBatteryTempPref;
+    @VisibleForTesting
+    PowerGaugePreference mBatteryHealthPref;
 
     @VisibleForTesting
     BatteryHeaderPreferenceController mBatteryHeaderPreferenceController;
@@ -89,6 +96,10 @@ public class PowerUsageSummary extends PowerUsageBase implements
     Preference mHelpPreference;
     @VisibleForTesting
     Preference mBatteryUsagePreference;
+
+    private String mBatteryHealth;
+    private String mBatteryRemainingCapacity;
+    private String mBatteryDesignCapacity;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -168,8 +179,15 @@ public class PowerUsageSummary extends PowerUsageBase implements
         initFeatureProvider();
         initPreference();
 
+        mBatteryHealthPref = (PowerGaugePreference) findPreference(KEY_BATTERY_HEALTH);
         mBatteryTempPref = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
         mBatteryUtils = BatteryUtils.getInstance(getContext());
+
+        mBatteryHealth = getResources().getString(R.string.config_batteryHealthNode);
+        mBatteryRemainingCapacity = getResources().getString(R.string.config_batteryRemainingCapacityNode);
+        mBatteryDesignCapacity = getResources().getString(R.string.config_batteryDesignCapacityNode);
+
+        mBatteryHealthPref.setVisible(getBatteryHealth() != null);
 
         if (Utils.isBatteryPresent(getContext())) {
             restartBatteryInfoLoader();
@@ -249,6 +267,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
         }
         // reload BatteryInfo and updateUI
         restartBatteryInfoLoader();
+        if (mBatteryHealthPref != null)
+            mBatteryHealthPref.setSummary(getBatteryHealth() + "%");
     }
 
     @VisibleForTesting
@@ -259,6 +279,20 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     void setBatteryLayoutPreference(LayoutPreference layoutPreference) {
         mBatteryLayoutPref = layoutPreference;
+    }
+
+    String getBatteryHealth() {
+        String health;
+        if (!TextUtils.isEmpty(mBatteryHealth)) {
+            health = readLine(mBatteryHealth);
+        } else if (!TextUtils.isEmpty(mBatteryRemainingCapacity) &&
+                !TextUtils.isEmpty(mBatteryDesignCapacity)) {
+            health = String.valueOf(Integer.parseInt(readLine(mBatteryRemainingCapacity)) * 100 /
+                    Integer.parseInt(readLine(mBatteryDesignCapacity)));
+        } else {
+            health = null;
+        }
+        return health;
     }
 
     @VisibleForTesting
@@ -317,6 +351,22 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @Override
     public void onBatteryTipHandled(BatteryTip batteryTip) {
         restartBatteryTipLoader();
+    }
+
+    private static String readLine(String filename) {
+        BufferedReader reader;
+        String line = null;
+        try {
+            reader = new BufferedReader(new FileReader(filename), 256);
+            try {
+                line = reader.readLine();
+            } finally {
+                reader.close();
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return line;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
