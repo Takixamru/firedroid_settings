@@ -44,7 +44,6 @@
             android:selectable="true"
             settings:textStart="@string/thin_label"
             settings:textEnd="@string/thick_label"/>
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="assistant_gesture_category"
