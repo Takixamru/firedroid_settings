@@ -71,9 +71,12 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
+<<<<<<< HEAD
     private static final String KEY_BATTERY_TEMP = "battery_temp";
     private static final String KEY_BATTERY_HEALTH = "battery_health";
 
+=======
+>>>>>>> parent of e92af04467... Settings: Show battery temp data on Battery settings
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting
@@ -82,10 +85,13 @@ public class PowerUsageSummary extends PowerUsageBase implements
     LayoutPreference mBatteryLayoutPref;
     @VisibleForTesting
     BatteryInfo mBatteryInfo;
+<<<<<<< HEAD
     @VisibleForTesting
     PowerGaugePreference mBatteryTempPref;
     @VisibleForTesting
     PowerGaugePreference mBatteryHealthPref;
+=======
+>>>>>>> parent of e92af04467... Settings: Show battery temp data on Battery settings
 
     @VisibleForTesting
     BatteryHeaderPreferenceController mBatteryHeaderPreferenceController;
@@ -180,8 +186,11 @@ public class PowerUsageSummary extends PowerUsageBase implements
         initFeatureProvider();
         initPreference();
 
+<<<<<<< HEAD
         mBatteryHealthPref = (PowerGaugePreference) findPreference(KEY_BATTERY_HEALTH);
         mBatteryTempPref = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
+=======
+>>>>>>> parent of e92af04467... Settings: Show battery temp data on Battery settings
         mBatteryUtils = BatteryUtils.getInstance(getContext());
 
         mBatteryHealth = getResources().getString(R.string.config_batteryHealthNode);
@@ -273,11 +282,6 @@ public class PowerUsageSummary extends PowerUsageBase implements
             restartBatteryTipLoader();
         } else {
             mNeedUpdateBatteryTip = true;
-        }
-        if (BatteryInfo.batteryTemp != 0f) {
-            mBatteryTempPref.setSummary(BatteryInfo.batteryTemp / 10 + " °C");
-        } else {
-            mBatteryTempPref.setSummary(getResources().getString(R.string.status_unavailable));
         }
         // reload BatteryInfo and updateUI
         restartBatteryInfoLoader();

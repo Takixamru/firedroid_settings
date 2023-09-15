@@ -83,11 +83,6 @@
         settings:controller="com.android.settings.fuelgauge.FastChargingPreferenceController"/>
 
     <com.android.settings.fuelgauge.batteryusage.PowerGaugePreference
-        android:key="battery_temp"
-        android:title="@string/battery_temp"
-        android:selectable="false" />
-
-    <com.android.settings.fuelgauge.batteryusage.PowerGaugePreference
         android:key="battery_health"
         android:title="@string/battery_health_title"
         android:selectable="false" />
