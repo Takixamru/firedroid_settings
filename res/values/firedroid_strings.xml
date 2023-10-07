@@ -9,4 +9,7 @@
 
     <!-- FireDroid Maintainer -->
     <string name="FireDroid_maintainer">Device Maintainer</string>
+
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="build_date">Build date</string>
 </resources>
