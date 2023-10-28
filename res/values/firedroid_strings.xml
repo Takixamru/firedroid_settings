@@ -233,4 +233,7 @@
 
     <!-- Battery health -->
     <string name="battery_health_title">Battery health</string>
+    
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="build_date">Build date</string>
 </resources>
