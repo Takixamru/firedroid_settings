@@ -23,6 +23,10 @@
     <string name="use_games_spoof_title">Unlock Higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
 
+    <!-- Spoof device model for Netflix -->
+    <string name="use_netflix_spoof_title">Spoof device model for Netflix</string>
+    <string name="use_netflix_spoof_summary">Spoof your device as different model for unlock HDR</string>
+
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Hidden apps</string>
     <string name="hidden_apps_summary">Applications that should be hidden from launcher. Requires a launcher restart for changes to take effect</string>

@@ -53,12 +53,15 @@ public class LabSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
+    private static final String KEY_NETFLIX_SPOOF = "use_netflix_spoof";
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
+    private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
 
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
+    private SwitchPreference mNetflixSpoof;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,12 +77,17 @@ public class LabSettings extends SettingsPreferenceFragment implements
         mPhotosSpoof = (SwitchPreference) prefScreen.findPreference(KEY_PHOTOS_SPOOF);
         mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
         mPhotosSpoof.setOnPreferenceChangeListener(this);
+
+        mNetflixSpoof = (SwitchPreference) prefScreen.findPreference(KEY_NETFLIX_SPOOF);
+        mNetflixSpoof.setChecked(SystemProperties.getBoolean(SYS_NETFLIX_SPOOF, false));
+        mNetflixSpoof.setOnPreferenceChangeListener(this);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+        SystemProperties.set(SYS_NETFLIX_SPOOF,"false");
     }
 
     @Override
@@ -92,6 +100,10 @@ public class LabSettings extends SettingsPreferenceFragment implements
         } else if (preference == mPhotosSpoof) {
             boolean value = (Boolean) newValue;
             SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
+            return true;
+        } else if (preference == mNetflixSpoof) {
+            boolean value = (Boolean) newValue;
+            SystemProperties.set(SYS_NETFLIX_SPOOF, value ? "true" : "false");
             return true;
         }
         return false;

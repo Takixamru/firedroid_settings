@@ -38,6 +38,13 @@
             android:summary="@string/use_photos_spoof_summary"
             android:defaultValue="true" />
 
+        <!-- Unlock HDR for Netflix -->
+        <SwitchPreference
+            android:key="use_netflix_spoof"
+            android:title="@string/use_netflix_spoof_title"
+            android:summary="@string/use_netflix_spoof_summary"
+            android:defaultValue="false" />
+
     <com.android.settings.custom.preference.SecureSettingSwitchPreference
         android:order="92"
         android:key="window_ignore_secure"
