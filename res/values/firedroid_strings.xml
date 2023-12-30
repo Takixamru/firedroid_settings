@@ -9,4 +9,9 @@
 
     <!-- FireDroid Maintainer -->
     <string name="FireDroid_maintainer">!!Fire Maintainer!!#</string>
+
+    <!-- BonFire -->
+    <string name="firedroid_lab_title">BonFire</string>
+    <string name="firedroid_lab_footer">These features are in Beta stages. Warning: May Burn your device. :XD</string>
+    <string name="firedroid_lab_summary">Ready to Ignite ?</string>
 </resources>
