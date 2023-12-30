@@ -5,6 +5,6 @@ import android.os.SystemProperties;
 
 public class VersionUtils {
     public static String getcustomVersion(){
-        return SystemProperties.get("ro.custom.version","");
+        return SystemProperties.get("org.firedroid.version.display","");
     }
 }
